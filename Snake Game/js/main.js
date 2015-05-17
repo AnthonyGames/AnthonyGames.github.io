@@ -40,7 +40,7 @@ function click(e){
 		}
 
 		++count;
-		if (count>=1){
+		if (count>=30){
 
 			if (score<=best){best=score;}
 			
