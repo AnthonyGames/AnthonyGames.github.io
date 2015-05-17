@@ -2,7 +2,7 @@ var r,g,b,x,y;
 var offset=10;
 var color;
 var score=1000;
-var best=2000;
+var best=9001;
 var count=0;
 var differ;
 function Setup() {
