@@ -1,12 +1,14 @@
 var r,g,b,x,y;
-var offset=100;
+var offset=10;
 var color;
-var score=0;
-var best=0;
+var score=1000;
+var best=2000;
+var count=0;
 var differ;
 function Setup() {
 
-	score=0;
+	count =0;
+	score=1000;
 	offset=100;
 	var gameCanvas = document.getElementById("gameCanvas");
     gameCanvas.width = 600;
@@ -29,7 +31,22 @@ function click(e){
 	var X=e.offsetX;
 	var Y=e.offsetY;
 
-	if (X>(x*60)&&Y>(y*60)&&X<((x+1)*60)&&Y<((y+1)*60)){
+	if (X>((x*60)-10)&&Y>((y*60)-10)&&X<(((x+1)*60)+10)&&Y<(((y+1)*60)+10)){
+
+		offset=offset-1;
+
+		if (offset<=0){
+			offset=1;
+		}
+
+		++count;
+		if (count>=1){
+
+			if (score<=best){best=score;}
+			
+			Setup();
+
+		}
 
 		loadLvl();
 
@@ -57,25 +74,16 @@ function loadLvl(){
 
 	differ='rgb('+r+','+g+','+b+')';
 
-
-	offset=offset-20;
-
-	if (offset==0){
-		offset=1;
-	}
-
 	x=Math.floor(parseInt(Math.random()*10));
 	y=Math.floor(parseInt(Math.random()*10));
 
 	score=score+1;
 
-	if (best<score)
-	best=best+1;
-
-
-
 }
 function paint(){
+
+	--score;
+
 	var gameCanvas = document.getElementById("gameCanvas");
 	var ctx = gameCanvas.getContext('2d');
 
@@ -105,8 +113,10 @@ function paint(){
 
 	ctx.fillRect(x*60,y*60,57,57)
 	ctx.fillStyle ='rgb(0,0,0)';
+	ctx.fillText("Get to 30 as fast as possible",0,20);
 	ctx.fillText("Current score:"+score,0,550);
 	ctx.fillText("Best score:"+best,0,590);
+	ctx.fillText("#"+count,550,20);
 
 
 }
