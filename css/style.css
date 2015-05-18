@@ -1,0 +1,44 @@
+    p.desc {
+    position: relative;
+    font-size: 50%;
+    top: 100;
+    border-color: green;
+    border-style: solid;
+    border-width: 5px;
+    color: #7FFF00;
+    font-weight: bold;
+    background-color: green;
+
+}    p.fixedText {
+    position: fixed;
+    top: 0px;
+    left: 200px;
+    text-align: center;
+    color: white;
+}
+    p.link {
+    position: fixed;
+    top: 25px;
+    left: 50px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: red;
+}
+    img.header{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px
+}
+    img.icon{
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 
+    80px;
+}
+    img.pic{
+    position: relative;
+    top: +140px;
+    width: 
+    80px;

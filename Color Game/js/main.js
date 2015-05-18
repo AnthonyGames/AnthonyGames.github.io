@@ -2,10 +2,13 @@ var r,g,b,x,y;
 var offset=10;
 var color;
 var score=1000;
-var best=9001;
+var best=0;
 var count=0;
 var differ;
+
 function Setup() {
+
+	document.getElementById("StartText").style.visibility = "hidden";
 
 	count =0;
 	score=1000;
@@ -42,7 +45,7 @@ function click(e){
 		++count;
 		if (count>=30){
 
-			if (score<=best){best=score;}
+			if (score>=best){best=score;}
 			
 			Setup();
 
