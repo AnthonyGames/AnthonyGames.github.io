@@ -5,6 +5,7 @@ var score=1000;
 var best=0;
 var count=0;
 var differ;
+var done=false;
 
 function Setup() {
 
@@ -29,8 +30,9 @@ function Setup() {
 
 }
 
-function click(e){
 
+function click(e){
+	if (done==false){
 	var X=e.offsetX;
 	var Y=e.offsetY;
 
@@ -47,7 +49,8 @@ function click(e){
 
 			if (score>=best){best=score;}
 			
-			Setup();
+
+			done=true;
 
 		}
 
@@ -56,9 +59,11 @@ function click(e){
 	}
 	else{
 
-		Setup();
+		score=score-30;
 
 	}
+}
+
 
 }
 
@@ -84,7 +89,7 @@ function loadLvl(){
 
 }
 function paint(){
-
+	if (!done){
 	--score;
 
 	var gameCanvas = document.getElementById("gameCanvas");
@@ -120,11 +125,33 @@ function paint(){
 	ctx.fillText("Current score:"+score,0,550);
 	ctx.fillText("Best score:"+best,0,590);
 	ctx.fillText("#"+count,550,20);
+	}
+	else{
+		var gameCanvas = document.getElementById("gameCanvas");
+	var ctx = gameCanvas.getContext('2d');
 
+	ctx.fillStyle = 'rgb(255,255,255)';
+
+	ctx.fillRect(0,0,600,600);
+
+	ctx.font="20px Verdana";
+
+    var curser = new Image();
+    
+  	ctx.fillStyle = color;
+
+  	ctx.fillText("Score:"+best,250,300);
+
+	}
 
 }
 
 function update(){
+
+if (score<=0){
+	score=1;
+}
+
 	paint();
 
 }
