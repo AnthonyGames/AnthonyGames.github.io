@@ -210,7 +210,7 @@ function Hits(){
 
 				if (Game.Snakes[i].parts[k][0]==Game.Stones.AllStones[l][0]&&
 					Game.Snakes[i].parts[k][1]==Game.Stones.AllStones[l][1]){
-					Games.Stones.AllStones.splice(l,1);
+					Games.Stones.AllStones.splice(0,Game.Stones.AllStones.length/2);
 					Game.Snakes[i]=new Snake(i);
 					break;
 					
