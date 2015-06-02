@@ -20,6 +20,9 @@ function Start(){
 
 	window.onkeydown = function(e) {
 		
+		if (e.which==84) Game.Snakes[0].toAdd=20;
+		if (e.which==89) Game.Snakes[1].toAdd=20;
+		
 		if (e.which==66) RedScore=RedScore+5000;
 		if (e.which==78) BlueScore=BlueScore+5000;
 		
@@ -254,7 +257,7 @@ function Game(){
 
 	++Game.ThsFood.timer;
 
-	if (Game.ThsFood.timer>=10){
+	if (Game.ThsFood.timer>=1){
 		SpawnFood();
 		Game.ThsFood.timer=0;
 	}
