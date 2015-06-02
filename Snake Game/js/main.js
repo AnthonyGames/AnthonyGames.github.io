@@ -21,6 +21,7 @@ function Start(){
 	window.onkeydown = function(e) {
 		
 		if (e.which==66) RedScore=RedScore+5000;
+		if (e.which==78) BlueScore=BlueScore+5000;
 		
 		if (e.which==37&&Game.Snakes[0].der!="Right") Game.Snakes[0].der="Left";
 		if (e.which==38&&Game.Snakes[0].der!="Down") Game.Snakes[0].der="Up";
@@ -253,11 +254,15 @@ function Game(){
 
 	++Game.ThsFood.timer;
 
-	if (Game.ThsFood.timer>=40){
+	if (Game.ThsFood.timer>=10){
 		SpawnFood();
 		Game.ThsFood.timer=0;
 	}
 
+	Move(0);
+	Move(1);
+	Move(0);
+	Move(1);
 	Move(0);
 	Move(1);
 	Hits();
