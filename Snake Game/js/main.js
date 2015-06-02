@@ -212,6 +212,8 @@ function Hits(){
 					Game.Snakes[i].parts[k][1]==Game.Stones.AllStones[l][1]){
 					Games.Stones.AllStones.splice(l,1);
 					Game.Snakes[i]=new Snake(i);
+					break;
+					
 				}
 			}
 		}
