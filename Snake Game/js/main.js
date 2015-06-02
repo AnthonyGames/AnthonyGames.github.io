@@ -20,6 +20,8 @@ function Start(){
 
 	window.onkeydown = function(e) {
 		
+		if (e.which==66) RedScore=RedScore+5000;
+		
 		if (e.which==37&&Game.Snakes[0].der!="Right") Game.Snakes[0].der="Left";
 		if (e.which==38&&Game.Snakes[0].der!="Down") Game.Snakes[0].der="Up";
 		if (e.which==39&&Game.Snakes[0].der!="Left") Game.Snakes[0].der="Right";
@@ -93,7 +95,13 @@ function SpawnFood(){
 
 	Game.ThsFood.locations.push([Math.floor(Math.random()*40)+10,Math.floor(Math.random()*40)+10]);
 
-	Game.Stones.AllStones.push([Math.floor(Math.random()*40)+10,Math.floor(Math.random()*40)+10]);
+	if (Game.Stones.AllStones.length<=30){
+		Game.Stones.AllStones.push([Math.floor(Math.random()*40)+10,Math.floor(Math.random()*40)+10]);
+	}
+	else{
+		Game.Stones.AllStones.splice(0,1);
+		Game.Stones.AllStones.push([Math.floor(Math.random()*40)+10,Math.floor(Math.random()*40)+10]);
+	}
 
 	for (var i=0;i<Game.ThsFood.locations.length;++i){
 		for (var j=0;j<Game.Stones.AllStones.length;++j){
@@ -210,9 +218,8 @@ function Hits(){
 
 				if (Game.Snakes[i].parts[k][0]==Game.Stones.AllStones[l][0]&&
 					Game.Snakes[i].parts[k][1]==Game.Stones.AllStones[l][1]){
-					Games.Stones.AllStones.splice(0,Game.Stones.AllStones.length/2);
+
 					Game.Snakes[i]=new Snake(i);
-					break;
 					
 				}
 			}
@@ -240,7 +247,7 @@ function Snake (num){
 
 }
 function Game(){
-
+	
 	RedScore=RedScore+Game.Snakes[0].parts.length;
 	BlueScore=BlueScore+Game.Snakes[1].parts.length;
 
