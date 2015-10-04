@@ -1,48 +1,5 @@
-	.center{
-	
-	width: 1000px;
-	position: absolute;
-	top: 0;
-}
-	.rounded{
-	
-	z-index: -1;
-	border-radius: 50;
-	width: 1000px;
-	height: 1000px;
-	top:-50;
-    	
-}
-	.border{
-	
-	border: 1px solid black; 
-	padding-left: 10px; 
-	padding-right: 10px;
-	background-color: white;
-	position: absolute;
-	text-decoration: none;
-	
-}
-	.rect{
-	
-	position: relative;
-	border: 1px solid #000;
-	background-color: white;
-	
-}
-	.preview{
-	
-	position: absolute;
-	left: 250;
-	width: 50;
-	height: 50;
-	border: 1px solid black;		
-}
-	.desc{
-	
-	position: absolute;
-	left: 320;
-	width: 50;
-	height: 50;
-	white-space: nowrap;
+rect.center {
+    min-height: 10em;
+    display: table-cell;
+    vertical-align: middle
 }
