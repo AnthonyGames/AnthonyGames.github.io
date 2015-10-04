@@ -45,9 +45,15 @@ function init (){
 	img.src='images/StaryBackground.png';
 	glowImg.src='images/glow.png';
 	
+<<<<<<< HEAD
 	squareData.push(new game("Snake Game",'images/snake.png',"/browser Games/Snake Game/game.html",0,0));
 	squareData.push(new game("Color Game",'images/color.png',"/browser Games/Color Game/game.html",1,0));
 	squareData.push(new game("Swaper Game",'images/swaper.png',"/browser Games/Swaper Game/game.html",0,1));
+=======
+	squareData.push(new game("Snake Game",'images/snake.png',"browser Games/Snake Game/game.html",0,0));
+	squareData.push(new game("Color Game",'images/color.png',"browser Games/Color Game/game.html",1,0));
+	squareData.push(new game("Swaper Game",'images/swaper.png',"browser Games/Swaper Game/game.html",0,1));
+>>>>>>> origin/master
 }
 
 function game (name,img,link,x,y){
