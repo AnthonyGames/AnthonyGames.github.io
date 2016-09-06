@@ -98,15 +98,8 @@ function Move(num){
 function SpawnFood(){
 
 	Game.ThsFood.locations.push([Math.floor(Math.random()*40)+10,Math.floor(Math.random()*40)+10]);
-
-	if (Game.Stones.AllStones.length<=130){
-		Game.Stones.AllStones.push([Math.floor(Math.random()*40)+10,Math.floor(Math.random()*40)+10]);
-	}
-	else{
-		Game.Stones.AllStones.splice(0,1);
-		Game.Stones.AllStones.push([Math.floor(Math.random()*40)+10,Math.floor(Math.random()*40)+10]);
-	}
-
+	Game.Stones.AllStones.push([Math.floor(Math.random()*40)+10,Math.floor(Math.random()*40)+10]);
+	
 	for (var i=0;i<Game.ThsFood.locations.length;++i){
 		for (var j=0;j<Game.Stones.AllStones.length;++j){
 
@@ -257,7 +250,7 @@ function Game(){
 
 	++Game.ThsFood.timer;
 
-	if (Game.ThsFood.timer>=20){
+	if (Game.ThsFood.timer>=10){
 		SpawnFood();
 		Game.ThsFood.timer=0;
 	}
