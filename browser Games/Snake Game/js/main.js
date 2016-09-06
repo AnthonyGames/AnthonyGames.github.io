@@ -257,7 +257,7 @@ function Game(){
 
 	++Game.ThsFood.timer;
 
-	if (Game.ThsFood.timer>=40){
+	if (Game.ThsFood.timer>=20){
 		SpawnFood();
 		Game.ThsFood.timer=0;
 	}
