@@ -207,7 +207,7 @@ function Hits(){
 					Game.Snakes[i].parts[k][1]==Game.ThsFood.locations[l][1]){
 
 					Game.ThsFood.locations.splice(l,1);
-					Game.Snakes[i].toAdd=Game.Snakes[i].toAdd+10;
+					Game.Snakes[i].toAdd=Game.Snakes[i].toAdd+4;
 
 				}
 			}
@@ -250,7 +250,17 @@ function Game(){
 
 	++Game.ThsFood.timer;
 
-	if (Game.ThsFood.timer>=10){
+	if (Game.ThsFood.timer>=100){
+		SpawnFood();
+		SpawnFood();
+		SpawnFood();
+		SpawnFood();
+		SpawnFood();
+		SpawnFood();
+		SpawnFood();
+		SpawnFood();
+		SpawnFood();
+		SpawnFood();
 		SpawnFood();
 		Game.ThsFood.timer=0;
 	}
